@@ -1,0 +1,16 @@
+﻿version: 'latest'
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: smak_user
+      POSTGRES_PASSWORD: smak_pass
+      POSTGRES_DB: smak_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
