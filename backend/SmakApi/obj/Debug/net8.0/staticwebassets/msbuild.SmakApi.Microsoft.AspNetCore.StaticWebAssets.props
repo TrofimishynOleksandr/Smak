@@ -1,0 +1,36 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\category-images\63f669e8-c2b7-4ce8-a7fd-8e8f844dc87e_photo_2022-05-21_23-38-15.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>category-images/63f669e8-c2b7-4ce8-a7fd-8e8f844dc87e_photo_2022-05-21_23-38-15.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\category-images\63f669e8-c2b7-4ce8-a7fd-8e8f844dc87e_photo_2022-05-21_23-38-15.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\9ea111d1-811c-4a02-b2bb-e0fc5a8654b0_itog-5-7.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>recipe-images/9ea111d1-811c-4a02-b2bb-e0fc5a8654b0_itog-5-7.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\9ea111d1-811c-4a02-b2bb-e0fc5a8654b0_itog-5-7.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+  </ItemGroup>
+</Project>

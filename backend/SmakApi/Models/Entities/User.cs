@@ -11,13 +11,14 @@ public class User
     public string Email { get; set; } = null!;
     [MaxLength(255)]
     public string PasswordHash { get; set; } = null!;
+    public string? AvatarUrl { get; set; }
     public UserRole Role { get; set; } = UserRole.User;
     public DateTime CreatedAt { get; set; }
 
     public ICollection<Recipe> Recipes { get; set; } = new List<Recipe>();
-    public ICollection<Comment> Comments { get; set; } = new List<Comment>();
-    public ICollection<Rating> Ratings { get; set; } = new List<Rating>();
+    public ICollection<Review> Reviews { get; set; } = new List<Review>();
     public ICollection<Favorite> Favorites { get; set; } = new List<Favorite>();
+    public ICollection<Ingredient> CreatedIngredients { get; set; } = new List<Ingredient>();
 }
 
 public enum UserRole

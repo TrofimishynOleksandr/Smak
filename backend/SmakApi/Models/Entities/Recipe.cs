@@ -11,6 +11,7 @@ public class Recipe
     public string Description { get; set; } = null!;
     [MaxLength(255)]
     public string? ImageUrl { get; set; }
+    public int CookTimeMinutes { get; set; }
     public DateTime CreatedAt { get; set; }
 
     public Guid AuthorId { get; set; }
@@ -22,7 +23,6 @@ public class Recipe
     public ICollection<IngredientItem> Ingredients { get; set; } = new List<IngredientItem>();
     public ICollection<InstructionStep> Instructions { get; set; } = new List<InstructionStep>();
 
-    public ICollection<Comment> Comments { get; set; } = new List<Comment>();
-    public ICollection<Rating> Ratings { get; set; } = new List<Rating>();
+    public ICollection<Review> Reviews { get; set; } = new List<Review>();
     public ICollection<Favorite> Favorites { get; set; } = new List<Favorite>();
 }

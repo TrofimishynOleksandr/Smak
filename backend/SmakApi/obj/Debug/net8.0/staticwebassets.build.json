@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "2EMEoXJKBDXhsnEIQhm8U0OKmqo2ecqEWVWUDnuygCQ=",
+  "Hash": "Ax06A8ac1sUrfBSa/ZcGmvDtpn4zXQiOgZMzRszDnF0=",
   "Source": "SmakApi",
   "BasePath": "_content/SmakApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "SmakApi\\wwwroot",
+      "Source": "SmakApi",
+      "ContentRoot": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\",
+      "BasePath": "_content/SmakApi",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

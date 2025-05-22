@@ -42,35 +42,6 @@ namespace SmakApi.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("SmakApi.Models.Entities.Comment", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasMaxLength(1000)
-                        .HasColumnType("character varying(1000)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid>("RecipeId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RecipeId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Comments");
-                });
-
             modelBuilder.Entity("SmakApi.Models.Entities.Favorite", b =>
                 {
                     b.Property<Guid>("Id")
@@ -93,16 +64,35 @@ namespace SmakApi.Migrations
                     b.ToTable("Favorites");
                 });
 
-            modelBuilder.Entity("SmakApi.Models.Entities.IngredientItem", b =>
+            modelBuilder.Entity("SmakApi.Models.Entities.Ingredient", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("CreatedByUserId")
                         .HasColumnType("uuid");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedByUserId");
+
+                    b.ToTable("Ingredients");
+                });
+
+            modelBuilder.Entity("SmakApi.Models.Entities.IngredientItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("IngredientId")
+                        .HasColumnType("uuid");
 
                     b.Property<float?>("Quantity")
                         .HasColumnType("real");
@@ -115,6 +105,8 @@ namespace SmakApi.Migrations
                         .HasColumnType("character varying(20)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("IngredientId");
 
                     b.HasIndex("RecipeId");
 
@@ -149,31 +141,6 @@ namespace SmakApi.Migrations
                     b.ToTable("InstructionSteps");
                 });
 
-            modelBuilder.Entity("SmakApi.Models.Entities.Rating", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("RecipeId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
-
-                    b.Property<int>("Value")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RecipeId");
-
-                    b.HasIndex("UserId", "RecipeId")
-                        .IsUnique();
-
-                    b.ToTable("Ratings");
-                });
-
             modelBuilder.Entity("SmakApi.Models.Entities.Recipe", b =>
                 {
                     b.Property<Guid>("Id")
@@ -185,6 +152,9 @@ namespace SmakApi.Migrations
 
                     b.Property<Guid>("CategoryId")
                         .HasColumnType("uuid");
+
+                    b.Property<int>("CookTimeMinutes")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -212,11 +182,48 @@ namespace SmakApi.Migrations
                     b.ToTable("Recipes");
                 });
 
+            modelBuilder.Entity("SmakApi.Models.Entities.Review", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Comment")
+                        .HasMaxLength(1000)
+                        .HasColumnType("character varying(1000)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("timestamp with time zone")
+                        .HasDefaultValueSql("NOW()");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("RecipeId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RecipeId");
+
+                    b.HasIndex("UserId", "RecipeId")
+                        .IsUnique();
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("SmakApi.Models.Entities.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
+
+                    b.Property<string>("AvatarUrl")
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -248,25 +255,6 @@ namespace SmakApi.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("SmakApi.Models.Entities.Comment", b =>
-                {
-                    b.HasOne("SmakApi.Models.Entities.Recipe", "Recipe")
-                        .WithMany("Comments")
-                        .HasForeignKey("RecipeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SmakApi.Models.Entities.User", "User")
-                        .WithMany("Comments")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Recipe");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("SmakApi.Models.Entities.Favorite", b =>
                 {
                     b.HasOne("SmakApi.Models.Entities.Recipe", "Recipe")
@@ -286,13 +274,31 @@ namespace SmakApi.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("SmakApi.Models.Entities.Ingredient", b =>
+                {
+                    b.HasOne("SmakApi.Models.Entities.User", "CreatedByUser")
+                        .WithMany("CreatedIngredients")
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("CreatedByUser");
+                });
+
             modelBuilder.Entity("SmakApi.Models.Entities.IngredientItem", b =>
                 {
+                    b.HasOne("SmakApi.Models.Entities.Ingredient", "Ingredient")
+                        .WithMany("IngredientItems")
+                        .HasForeignKey("IngredientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("SmakApi.Models.Entities.Recipe", "Recipe")
                         .WithMany("Ingredients")
                         .HasForeignKey("RecipeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Ingredient");
 
                     b.Navigation("Recipe");
                 });
@@ -306,25 +312,6 @@ namespace SmakApi.Migrations
                         .IsRequired();
 
                     b.Navigation("Recipe");
-                });
-
-            modelBuilder.Entity("SmakApi.Models.Entities.Rating", b =>
-                {
-                    b.HasOne("SmakApi.Models.Entities.Recipe", "Recipe")
-                        .WithMany("Ratings")
-                        .HasForeignKey("RecipeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SmakApi.Models.Entities.User", "User")
-                        .WithMany("Ratings")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Recipe");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("SmakApi.Models.Entities.Recipe", b =>
@@ -346,33 +333,55 @@ namespace SmakApi.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("SmakApi.Models.Entities.Review", b =>
+                {
+                    b.HasOne("SmakApi.Models.Entities.Recipe", "Recipe")
+                        .WithMany("Reviews")
+                        .HasForeignKey("RecipeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SmakApi.Models.Entities.User", "User")
+                        .WithMany("Reviews")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Recipe");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("SmakApi.Models.Entities.Category", b =>
                 {
                     b.Navigation("Recipes");
                 });
 
+            modelBuilder.Entity("SmakApi.Models.Entities.Ingredient", b =>
+                {
+                    b.Navigation("IngredientItems");
+                });
+
             modelBuilder.Entity("SmakApi.Models.Entities.Recipe", b =>
                 {
-                    b.Navigation("Comments");
-
                     b.Navigation("Favorites");
 
                     b.Navigation("Ingredients");
 
                     b.Navigation("Instructions");
 
-                    b.Navigation("Ratings");
+                    b.Navigation("Reviews");
                 });
 
             modelBuilder.Entity("SmakApi.Models.Entities.User", b =>
                 {
-                    b.Navigation("Comments");
+                    b.Navigation("CreatedIngredients");
 
                     b.Navigation("Favorites");
 
-                    b.Navigation("Ratings");
-
                     b.Navigation("Recipes");
+
+                    b.Navigation("Reviews");
                 });
 #pragma warning restore 612, 618
         }

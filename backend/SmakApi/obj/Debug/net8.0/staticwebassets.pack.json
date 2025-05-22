@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\category-images\\63f669e8-c2b7-4ce8-a7fd-8e8f844dc87e_photo_2022-05-21_23-38-15.jpg",
+      "PackagePath": "staticwebassets\\category-images\\63f669e8-c2b7-4ce8-a7fd-8e8f844dc87e_photo_2022-05-21_23-38-15.jpg"
+    },
+    {
+      "Id": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\recipe-images\\9ea111d1-811c-4a02-b2bb-e0fc5a8654b0_itog-5-7.jpg",
+      "PackagePath": "staticwebassets\\recipe-images\\9ea111d1-811c-4a02-b2bb-e0fc5a8654b0_itog-5-7.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SmakApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.SmakApi.props",
+      "PackagePath": "build\\SmakApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.SmakApi.props",
+      "PackagePath": "buildMultiTargeting\\SmakApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.SmakApi.props",
+      "PackagePath": "buildTransitive\\SmakApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
