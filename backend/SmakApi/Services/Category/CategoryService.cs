@@ -3,6 +3,7 @@ using SmakApi.Data.Repositories;
 using SmakApi.Exceptions;
 using SmakApi.Helpers;
 using SmakApi.Models.DTOs;
+using SmakApi.Services.Image;
 
 namespace SmakApi.Services.Category;
 
@@ -10,11 +11,13 @@ public class CategoryService : ICategoryService
 {
     private readonly IRepository<Models.Entities.Category> _repo;
     private readonly SmakDbContext _context;
+    private readonly IImageService _imageService;
 
-    public CategoryService(IRepository<Models.Entities.Category> repo, SmakDbContext context)
+    public CategoryService(IRepository<Models.Entities.Category> repo, SmakDbContext context, IImageService imageService)
     {
         _repo = repo;
         _context = context;
+        _imageService = imageService;
     }
 
     public async Task<IEnumerable<Models.Entities.Category>> GetAllAsync()
@@ -28,7 +31,7 @@ public class CategoryService : ICategoryService
         {
             Id = Guid.NewGuid(),
             Name = dto.Name,
-            ImageUrl = dto.Image != null ? await ImageHelper.SaveImageAsync(dto.Image, "category-images") : null
+            ImageUrl = dto.Image != null ? await _imageService.SaveImageAsync(dto.Image, "category-images") : null
         };
 
         await _repo.AddAsync(category);
@@ -44,11 +47,11 @@ public class CategoryService : ICategoryService
         category.Name = name;
 
         if (image != null)
-            category.ImageUrl = await ImageHelper.SaveImageAsync(image, "category-images");
+            category.ImageUrl = await _imageService.SaveImageAsync(image, "category-images");
 
         await _repo.SaveChangesAsync();
     }
-    
+
     public async Task DeleteAsync(Guid id)
     {
         var category = await _repo.GetByIdAsync(id) ?? throw new CustomException("Category not found", 404);
@@ -56,3 +59,4 @@ public class CategoryService : ICategoryService
         await _repo.SaveChangesAsync();
     }
 }
+

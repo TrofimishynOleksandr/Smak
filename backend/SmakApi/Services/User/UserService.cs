@@ -11,10 +11,12 @@ namespace SmakApi.Services.User;
 public class UserService : IUserService
 {
     private readonly SmakDbContext _context;
+    private readonly IImageHelper _imageHelper;
     
-    public UserService(SmakDbContext context)
+    public UserService(SmakDbContext context, IImageHelper imageHelper)
     {
         _context = context;
+        _imageHelper = imageHelper;
     }
     
     public async Task<List<PopularChefDto>> GetPopularChefsAsync()
@@ -85,9 +87,9 @@ public class UserService : IUserService
     {
         var user = await _context.Users.FindAsync(userId) ?? throw new CustomException("User not found", 404);
 
-        ImageHelper.DeleteImage(user.AvatarUrl);
+        _imageHelper.DeleteImage(user.AvatarUrl);
 
-        var path = await ImageHelper.SaveImageAsync(image, "avatar-images");
+        var path = await _imageHelper.SaveImageAsync(image, "avatar-images");
         user.AvatarUrl = path;
 
         await _context.SaveChangesAsync();
@@ -98,7 +100,7 @@ public class UserService : IUserService
     {
         var user = await _context.Users.FindAsync(userId) ?? throw new CustomException("User not found", 404);
 
-        ImageHelper.DeleteImage(user.AvatarUrl);
+        _imageHelper.DeleteImage(user.AvatarUrl);
         user.AvatarUrl = null;
 
         await _context.SaveChangesAsync();

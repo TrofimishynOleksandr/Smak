@@ -8,12 +8,14 @@ using Microsoft.OpenApi.Models;
 using SmakApi.Data;
 using SmakApi.Data.Repositories;
 using SmakApi.Data.Repositories.Recipe;
+using SmakApi.Helpers;
 using SmakApi.Mapping;
 using SmakApi.Middlewares;
 using SmakApi.Models.Entities;
 using SmakApi.Services.AdminUser;
 using SmakApi.Services.Auth;
 using SmakApi.Services.Category;
+using SmakApi.Services.Image;
 using SmakApi.Services.Ingredient;
 using SmakApi.Services.Recipe;
 using SmakApi.Services.Review;
@@ -95,6 +97,8 @@ builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAdminUserService, AdminUserService>();
 builder.Services.AddScoped<IIngredientService, IngredientService>();
+builder.Services.AddScoped<IImageService, ImageService>();
+builder.Services.AddScoped<IImageHelper, ImageHelper>();
 
 builder.Services.AddCors(options =>
 {

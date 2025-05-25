@@ -11,12 +11,12 @@ namespace SmakApi.Services.Recipe;
 public class RecipeService : IRecipeService
 {
     private readonly SmakDbContext _context;
-    private readonly IMapper _mapper;
+    private readonly IImageHelper _imageHelper;
 
-    public RecipeService(SmakDbContext context, IMapper mapper)
+    public RecipeService(SmakDbContext context, IImageHelper imageHelper)
     {
         _context = context;
-        _mapper = mapper;
+        _imageHelper = imageHelper;
     }
 
     public async Task<Guid> CreateAsync(Guid userId, CreateRecipeDto dto)
@@ -30,7 +30,7 @@ public class RecipeService : IRecipeService
             AuthorId = userId,
             CategoryId = dto.CategoryId,
             CreatedAt = DateTime.UtcNow,
-            ImageUrl = dto.Image != null ? await ImageHelper.SaveImageAsync(dto.Image, "recipe-images") : null
+            ImageUrl = dto.Image != null ? await _imageHelper.SaveImageAsync(dto.Image, "recipe-images") : null
         };
 
         recipe.Ingredients = new List<IngredientItem>();
@@ -69,7 +69,7 @@ public class RecipeService : IRecipeService
         for (int i = 0; i < dto.Instructions.Count; i++)
         {
             var step = dto.Instructions[i];
-            var stepImage = step.Image != null ? await ImageHelper.SaveImageAsync(step.Image, "step-images") : null;
+            var stepImage = step.Image != null ? await _imageHelper.SaveImageAsync(step.Image, "step-images") : null;
 
             recipe.Instructions.Add(new InstructionStep
             {
@@ -101,7 +101,7 @@ public class RecipeService : IRecipeService
         recipe.CategoryId = dto.CategoryId;
 
         if (dto.Image != null)
-            recipe.ImageUrl = await ImageHelper.SaveImageAsync(dto.Image, "recipe-images");
+            recipe.ImageUrl = await _imageHelper.SaveImageAsync(dto.Image, "recipe-images");
 
         _context.IngredientItems.RemoveRange(recipe.Ingredients);
         _context.InstructionSteps.RemoveRange(recipe.Instructions);
@@ -434,7 +434,7 @@ public class RecipeService : IRecipeService
         {
             var step = instructions[i];
             var stepImage = step.Image != null
-                ? await ImageHelper.SaveImageAsync(step.Image, "step-images")
+                ? await _imageHelper.SaveImageAsync(step.Image, "step-images")
                 : null;
 
             result.Add(new InstructionStep

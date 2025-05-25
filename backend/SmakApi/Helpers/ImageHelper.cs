@@ -2,9 +2,9 @@
 
 namespace SmakApi.Helpers;
 
-public static class ImageHelper
+public class ImageHelper : IImageHelper
 {
-    public static async Task<string> SaveImageAsync(IFormFile image, string folderName)
+    public async Task<string> SaveImageAsync(IFormFile image, string folderName)
     {
         if (image == null || image.Length == 0)
             throw new ArgumentException("Файл зображення відсутній або порожній");
@@ -21,8 +21,7 @@ public static class ImageHelper
         return $"/{folderName}/{fileName}";
     }
 
-
-    public static void DeleteImage(string? relativePath)
+    public void DeleteImage(string? relativePath)
     {
         if (string.IsNullOrWhiteSpace(relativePath)) return;
 

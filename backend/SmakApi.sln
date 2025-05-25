@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmakApi", "SmakApi\SmakApi.csproj", "{0FA74347-305A-4E06-A83D-FFB320FEC337}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmakApi.Tests", "SmakApi.Tests\SmakApi.Tests.csproj", "{B92ECF69-E676-4BF3-9B4D-F46A3005768A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{0FA74347-305A-4E06-A83D-FFB320FEC337}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FA74347-305A-4E06-A83D-FFB320FEC337}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FA74347-305A-4E06-A83D-FFB320FEC337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B92ECF69-E676-4BF3-9B4D-F46A3005768A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B92ECF69-E676-4BF3-9B4D-F46A3005768A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B92ECF69-E676-4BF3-9B4D-F46A3005768A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B92ECF69-E676-4BF3-9B4D-F46A3005768A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
