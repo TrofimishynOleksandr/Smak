@@ -1,0 +1,22 @@
+<div class="step-item" [formGroup]="group" cdkDrag>
+  <div class="drag-handle" cdkDragHandle>
+    ::
+  </div>
+  <textarea
+    formControlName="description"
+    placeholder="Опис кроку"
+    rows="2"
+    style="resize: none; min-height: 60px; max-height: 160px;"
+  ></textarea>
+
+  <div class="file-upload">
+    <label [for]="'instructionStepImage-' + index" class="file-label">
+      <svg icon="upload" size="22" class="icon24" /> Обрати зображення
+      <input [id]="'instructionStepImage-' + index" type="file" (change)="onImageChange($event)" accept="image/*" hidden />
+    </label>
+    <img *ngIf="imagePreview" [src]="imagePreview" alt="Прев’ю" class="step-preview-small" />
+  </div>
+
+  <button type="button" (click)="remove.emit()" class="remove-btn">×</button>
+
+</div>

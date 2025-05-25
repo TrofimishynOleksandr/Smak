@@ -1,0 +1,59 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="create-form">
+  <h2>Новий рецепт</h2>
+  <div class="form-row">
+    <input type="text" formControlName="title" placeholder="Назва рецепту" />
+  </div>
+  <div class="form-row">
+    <textarea formControlName="description" placeholder="Опис рецепту" rows="4" style="resize: none; min-height: 80px; max-height: 180px;"></textarea>
+  </div>
+  <div class="form-row">
+    <label>Час приготування (хв):</label>
+    <input type="number" formControlName="cookTimeMinutes" />
+  </div>
+  <div class="form-row">
+    <select formControlName="categoryId">
+      <option [ngValue]="null" disabled>Оберіть категорію</option>
+      <option *ngFor="let c of categories()" [value]="c.id">{{ c.name }}</option>
+    </select>
+  </div>
+
+  <div class="form-row file-upload">
+    <label for="recipeImage" class="file-label">
+      <svg icon="upload" size="22" class="icon24" /> Обрати зображення
+      <input id="recipeImage" type="file" (change)="onFileChange($event)" accept="image/*" hidden />
+    </label>
+    <img *ngIf="imagePreview" [src]="imagePreview" alt="Прев’ю" class="image-preview-small" />
+  </div>
+
+  <div class="section">
+    <h3>Інгредієнти</h3>
+    <div cdkDropList [cdkDropListData]="ingredients.controls" (cdkDropListDropped)="reorderIngredients($event)">
+      <app-ingredient-item
+        *ngFor="let ing of ingredients.controls; index as i"
+        [ingredients]="allIngredients()"
+        [group]="asFormGroup(ing)"
+        [units]="units()"
+        (remove)="removeIngredient(i)">
+      </app-ingredient-item>
+    </div>
+    <button type="button" class="add-btn" (click)="addIngredient()">+ Додати інгредієнт</button>
+  </div>
+
+  <div class="section">
+    <h3>Інструкція</h3>
+    <div cdkDropList [cdkDropListData]="instructions.controls" (cdkDropListDropped)="reorderSteps($event)">
+      <app-instruction-step-item
+        *ngFor="let step of instructions.controls; index as i"
+        [group]="asFormGroup(step)"
+        [index]="i"
+        (remove)="removeStep(i)">
+      </app-instruction-step-item>
+    </div>
+    <button type="button" class="add-btn" (click)="addStep()">+ Додати крок</button>
+  </div>
+
+  <div class="form-row">
+    <button type="submit" [disabled]="form.invalid">Створити рецепт</button>
+  </div>
+
+</form>

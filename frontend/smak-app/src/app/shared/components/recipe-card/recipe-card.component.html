@@ -1,0 +1,35 @@
+<div class="recipe-card"
+     role="link"
+     [routerLink]="['/recipes', recipe.id]"
+     (click)="goToRecipe($event)">
+  <div class="recipe-card__image-wrapper">
+    <img [src]="recipe.imageUrl | recipeImageUrl"
+         [alt]="recipe.title"
+         class="recipe-card__image"
+         (error)="onImageError($event)" />
+
+    <button class="recipe-card__like"
+            [class.filled]="isFavorite()"
+            (click)="toggleFavorite(); $event.stopPropagation()">
+      <svg icon="heart" class="icon16"></svg>
+    </button>
+  </div>
+
+  <div class="recipe-card__info">
+    <h3 class="recipe-card__title">{{ recipe.title }}</h3>
+    <p class="recipe-card__desc">{{ trimmedDescription }}</p>
+
+    <div class="recipe-card__meta">
+      <div class="recipe-card__time">
+        <svg icon="clock" class="icon16"></svg>
+        <span>{{ recipe.cookTimeMinutes }} хв.</span>
+      </div>
+      <div class="recipe-card__rating">
+        <ng-container *ngFor="let filled of starFillArray">
+          <svg icon="star" class="icon16" [ngClass]="{ 'filled': filled }"></svg>
+        </ng-container>
+        <span class="recipe-card__count">{{ recipe.ratingsCount }}</span>
+      </div>
+    </div>
+  </div>
+</div>

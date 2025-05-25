@@ -1,0 +1,39 @@
+<div class="admin-panel">
+  <h2>Користувачі</h2>
+  <div class="users-list">
+    <div *ngFor="let user of users" class="user-card">
+      <img [src]="user.avatarUrl | avatarUrl" class="avatar" alt="avatar"/>
+      <div class="info">
+        <strong>{{ user.name }}</strong>
+        <div>{{ user.email }}</div>
+        <div>Роль: {{ user.role }}</div>
+        <div class="actions">
+          <button (click)="assignChef(user.id)" *ngIf="user.role !== 'Chef'">Надати роль повара</button>
+          <button (click)="deleteUser(user.id)">Видалити</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Категорії</h2>
+  <form (ngSubmit)="createCategory()" class="category-form">
+    <input type="text" [(ngModel)]="newCategoryName" name="name" placeholder="Назва категорії" required />
+    <div class="file-upload">
+      <label for="categoryImageInput" class="file-label">
+        <svg icon="upload" size="22" class="icon24" /> Обрати зображення
+        <input id="categoryImageInput" type="file" (change)="onCategoryImageChange($event)" accept="image/*" hidden />
+      </label>
+      <img *ngIf="imagePreview" [src]="imagePreview" alt="Прев’ю" class="step-preview-small" />
+    </div>
+    <button type="submit">Додати категорію</button>
+  </form>
+
+  <div class="category-list">
+    <div *ngFor="let cat of categories" class="category-card">
+      <img [src]="cat.imageUrl | categoryImageUrl" alt="Category image" />
+      <div class="category-name">{{ cat.name }}</div>
+      <button class="danger-btn" (click)="deleteCategory(cat.id)">Видалити</button>
+    </div>
+  </div>
+
+</div>

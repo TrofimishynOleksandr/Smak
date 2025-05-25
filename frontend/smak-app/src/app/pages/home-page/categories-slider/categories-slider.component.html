@@ -1,0 +1,20 @@
+<div class="collection">
+  <div class="collection__wrapper">
+    <button class="scroll-btn left" (click)="scroll('left')">
+      <svg icon="arrow-left" size="24" class="icon24"></svg>
+    </button>
+    <div class="collection__slider" #scrollContainer>
+      <div
+        class="category-item"
+        *ngFor="let category of categories"
+        [routerLink]="['/recipes']"
+        [queryParams]="{ categoryId: category.id }">
+        <img [src]="category.imageUrl | categoryImageUrl" alt="{{ category.name }}" />
+        <div class="name">{{ category.name }}</div>
+      </div>
+    </div>
+    <button class="scroll-btn right" (click)="scroll('right')">
+      <svg icon="arrow-right" size="24" class="icon24" />
+    </button>
+  </div>
+</div>

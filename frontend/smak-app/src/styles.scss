@@ -1,0 +1,83 @@
+@use 'sass:map';
+@use 'sass:color';
+
+@import 'colors';
+@import 'typography';
+@import 'spacing';
+@import 'theme';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family-base;
+  color: $text-color;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+}
+
+
+.icon24 {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+  &.left {
+    left: -0.5rem;
+  }
+
+  &.right {
+    right: -0.5rem;
+  }
+
+  &:hover {
+    background: #fff;
+  }
+}
+
+.collection {
+  margin-bottom: $spacing-unit * 3;
+
+  &__title {
+    @include heading(1.4rem);
+    margin-bottom: $spacing-unit * 1.5;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__slider {
+    display: flex;
+    gap: 1rem;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+  }
+
+  &__card {
+    min-width: 220px;
+    flex-shrink: 0;
+  }
+}

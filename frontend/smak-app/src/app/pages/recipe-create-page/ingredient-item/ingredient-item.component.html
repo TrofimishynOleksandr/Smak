@@ -1,0 +1,34 @@
+<div class="ingredient-item" [formGroup]="group" cdkDrag>
+  <div class="drag-handle" cdkDragHandle>::</div>
+
+  <div class="form-row">
+    <ng-select
+      [items]="ingredients"
+      bindLabel="name"
+      bindValue="name"
+      [addTag]="true"
+      placeholder="Оберіть або введіть"
+      formControlName="name"
+      [searchable]="true"
+      [clearable]="false"
+      [loading]="!ingredients.length"
+      [ngClass]="{ 'ng-select-custom': isCustomSelected() }"
+      class="ingredient-select"
+      [trackByFn]="trackByName"
+    >
+      <ng-template ng-option-tmp let-item="item">
+        <span *ngIf="item?.name" [ngStyle]="{ 'font-weight': item.isCustom ? 'bold' : 'normal', color: item.isCustom ? '#14680c' : '#333' }">
+          {{ item.name }}
+        </span>
+      </ng-template>
+    </ng-select>
+  </div>
+
+  <input type="number" formControlName="quantity" placeholder="Кількість" class="ingredient-input" min="0" />
+
+  <select formControlName="unit" class="ingredient-unit">
+    <option *ngFor="let unit of units" [ngValue]="unit.value">{{ unit.label }}</option>
+  </select>
+
+  <button type="button" (click)="remove.emit()" class="remove-btn">×</button>
+</div>

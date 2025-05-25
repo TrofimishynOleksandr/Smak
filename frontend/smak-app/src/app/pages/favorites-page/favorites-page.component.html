@@ -1,0 +1,9 @@
+<section class="my-recipes">
+  <div class="header">
+    <h2>Улюблені рецепти</h2>
+  </div>
+
+  <div class="recipes">
+    <app-recipe-card *ngFor="let recipe of recipes" [recipe]="recipe" />
+  </div>
+</section>

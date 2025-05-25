@@ -1,0 +1,90 @@
+@import "theme";
+
+.icon16 {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  color: $muted-color;
+
+  &.filled {
+    color: #ffc107;
+  }
+}
+
+.recipe-card {
+  @include card;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  &__image-wrapper {
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__like {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: $white;
+    border-radius: 50%;
+    padding: 6px;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    svg {
+      color: $muted-color;
+      transition: color 0.3s;
+    }
+
+    &:hover svg,
+    &.filled svg {
+      color: red;
+    }
+  }
+
+  &__info {
+    padding: 12px;
+  }
+
+  &__title {
+    @include heading(1.1rem);
+    margin: 0 0 4px;
+  }
+
+  &__desc {
+    font-size: 0.9rem;
+    color: $muted-color;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+
+    & > div {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.85rem;
+      color: $text-color;
+    }
+  }
+}

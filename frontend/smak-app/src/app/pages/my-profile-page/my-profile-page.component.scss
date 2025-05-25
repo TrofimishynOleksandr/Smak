@@ -1,0 +1,80 @@
+@import 'theme';
+
+.profile {
+  max-width: 720px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding: 2rem;
+
+  h2 {
+    @include heading(1.6rem);
+  }
+
+  .avatar-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid $primary-color;
+    }
+  }
+
+  .upload-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    .file-label {
+      background: #06a561;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #04814c;
+      }
+    }
+
+    .remove-btn {
+      background: transparent;
+      border: 1px solid #e74c3c;
+      color: #e74c3c;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 0.9rem;
+      cursor: pointer;
+
+      &:hover {
+        background: #ffe6e6;
+      }
+    }
+  }
+
+  .info {
+    text-align: center;
+
+    p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+
+      strong {
+        color: $text-color;
+      }
+    }
+  }
+}

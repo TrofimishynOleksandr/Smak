@@ -1,0 +1,34 @@
+@import "colors";
+
+.collection__slider {
+  justify-content: space-around;
+}
+
+.scroll-btn {
+  top: 40%;
+}
+
+.chef-item {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  flex-shrink: 0;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+
+  .name {
+    font-weight: 500;
+    color: $text-color;
+    text-decoration: none;
+  }
+}

@@ -19,6 +19,7 @@ public class AdminUserService : IAdminUserService
     {
         return await _context.Users
             .OrderBy(u => u.CreatedAt)
+            .Where(u => u.Role != UserRole.Admin)
             .Select(u => new UserAdminDto
             {
                 Id = u.Id,

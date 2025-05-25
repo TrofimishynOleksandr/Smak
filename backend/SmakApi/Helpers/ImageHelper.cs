@@ -6,6 +6,9 @@ public static class ImageHelper
 {
     public static async Task<string> SaveImageAsync(IFormFile image, string folderName)
     {
+        if (image == null || image.Length == 0)
+            throw new ArgumentException("Файл зображення відсутній або порожній");
+
         var folder = Path.Combine("wwwroot", folderName);
         Directory.CreateDirectory(folder);
 
@@ -18,18 +21,13 @@ public static class ImageHelper
         return $"/{folderName}/{fileName}";
     }
 
+
     public static void DeleteImage(string? relativePath)
     {
         if (string.IsNullOrWhiteSpace(relativePath)) return;
 
         var fullPath = Path.Combine("wwwroot", relativePath.TrimStart('/'));
         if (File.Exists(fullPath)) File.Delete(fullPath);
-    }
-
-    public static string? ToFullImageUrl(string? relativePath, HttpRequest request)
-    {
-        if (string.IsNullOrWhiteSpace(relativePath)) return null;
-        return $"{request.Scheme}://{request.Host}{relativePath}";
     }
 }
 

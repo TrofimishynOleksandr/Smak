@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace SmakApi.Models.Entities;
+﻿namespace SmakApi.Models.Entities;
 
 public class IngredientItem
 {
@@ -27,4 +25,25 @@ public enum UnitOfMeasure
     Cup,       // склянка
     Pinch,     // щіпка
     ToTaste    // за смаком
+}
+
+public static class UnitExtensions
+{
+    public static string ToUkrainian(this UnitOfMeasure unit)
+    {
+        return unit switch
+        {
+            UnitOfMeasure.Piece => "шт.",
+            UnitOfMeasure.Gram => "г",
+            UnitOfMeasure.Kilogram => "кг",
+            UnitOfMeasure.Milliliter => "мл",
+            UnitOfMeasure.Liter => "л",
+            UnitOfMeasure.Teaspoon => "ч.л.",
+            UnitOfMeasure.Tablespoon => "ст.л.",
+            UnitOfMeasure.Cup => "склянка",
+            UnitOfMeasure.Pinch => "щіпка",
+            UnitOfMeasure.ToTaste => "за смаком",
+            _ => unit.ToString()
+        };
+    }
 }

@@ -1,11 +1,11 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\category-images\63f669e8-c2b7-4ce8-a7fd-8e8f844dc87e_photo_2022-05-21_23-38-15.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\avatar-images\847ff279-2d0e-46d1-8d34-437e6174fc46_photo_2022-05-21_23-38-15.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>SmakApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/SmakApi</BasePath>
-      <RelativePath>category-images/63f669e8-c2b7-4ce8-a7fd-8e8f844dc87e_photo_2022-05-21_23-38-15.jpg</RelativePath>
+      <RelativePath>avatar-images/847ff279-2d0e-46d1-8d34-437e6174fc46_photo_2022-05-21_23-38-15.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -14,14 +14,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\category-images\63f669e8-c2b7-4ce8-a7fd-8e8f844dc87e_photo_2022-05-21_23-38-15.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\avatar-images\847ff279-2d0e-46d1-8d34-437e6174fc46_photo_2022-05-21_23-38-15.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\9ea111d1-811c-4a02-b2bb-e0fc5a8654b0_itog-5-7.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\02fcc9cd-1e91-4a66-8d78-e8766240fe55_photo_2022-05-21_23-38-15.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>SmakApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/SmakApi</BasePath>
-      <RelativePath>recipe-images/9ea111d1-811c-4a02-b2bb-e0fc5a8654b0_itog-5-7.jpg</RelativePath>
+      <RelativePath>recipe-images/02fcc9cd-1e91-4a66-8d78-e8766240fe55_photo_2022-05-21_23-38-15.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -30,7 +30,343 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\9ea111d1-811c-4a02-b2bb-e0fc5a8654b0_itog-5-7.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\02fcc9cd-1e91-4a66-8d78-e8766240fe55_photo_2022-05-21_23-38-15.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\1951c680-2716-4950-9a16-2af095484e17_rectangular-image.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>recipe-images/1951c680-2716-4950-9a16-2af095484e17_rectangular-image.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\1951c680-2716-4950-9a16-2af095484e17_rectangular-image.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\27cc1f58-7014-4575-ac0c-4279796cfbdc_c5fd5203d45330b065ad8198f2adc96b.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>recipe-images/27cc1f58-7014-4575-ac0c-4279796cfbdc_c5fd5203d45330b065ad8198f2adc96b.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\27cc1f58-7014-4575-ac0c-4279796cfbdc_c5fd5203d45330b065ad8198f2adc96b.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\37a22db7-0dc5-4558-a4aa-ce4a2a612d8c_itog-5-7.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>recipe-images/37a22db7-0dc5-4558-a4aa-ce4a2a612d8c_itog-5-7.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\37a22db7-0dc5-4558-a4aa-ce4a2a612d8c_itog-5-7.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\4ddcf927-c5a6-4978-9a13-a8534813cd8e_itog-5-7.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>recipe-images/4ddcf927-c5a6-4978-9a13-a8534813cd8e_itog-5-7.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\4ddcf927-c5a6-4978-9a13-a8534813cd8e_itog-5-7.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\aae2b2c9-aaca-428f-ba5c-2a5f370bf0c7_1682610016_papik-pro-p-smail-roker-png-37.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>recipe-images/aae2b2c9-aaca-428f-ba5c-2a5f370bf0c7_1682610016_papik-pro-p-smail-roker-png-37.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\aae2b2c9-aaca-428f-ba5c-2a5f370bf0c7_1682610016_papik-pro-p-smail-roker-png-37.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\c63f2201-60f6-4d1f-998b-f3870b1b9f99_itog-5-7.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>recipe-images/c63f2201-60f6-4d1f-998b-f3870b1b9f99_itog-5-7.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\c63f2201-60f6-4d1f-998b-f3870b1b9f99_itog-5-7.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\ee324e52-9fba-4cf3-bcdc-910337f5577e_c5fd5203d45330b065ad8198f2adc96b.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>recipe-images/ee324e52-9fba-4cf3-bcdc-910337f5577e_c5fd5203d45330b065ad8198f2adc96b.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\ee324e52-9fba-4cf3-bcdc-910337f5577e_c5fd5203d45330b065ad8198f2adc96b.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\fd4da138-8638-4c36-b1b0-b21d3a6216d0_Снимок экрана 2025-05-22 220822.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>recipe-images/fd4da138-8638-4c36-b1b0-b21d3a6216d0_Снимок экрана 2025-05-22 220822.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\recipe-images\fd4da138-8638-4c36-b1b0-b21d3a6216d0_Снимок экрана 2025-05-22 220822.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\13a3792b-8d81-4e07-86c8-0a9d4b95c15d_1682699370_papik-pro-p-smail-icq-crazy-png-20.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>step-images/13a3792b-8d81-4e07-86c8-0a9d4b95c15d_1682699370_papik-pro-p-smail-icq-crazy-png-20.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\13a3792b-8d81-4e07-86c8-0a9d4b95c15d_1682699370_papik-pro-p-smail-icq-crazy-png-20.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\2e3d9fc5-6a00-47fd-a85e-05012b63ecd6_1682610016_papik-pro-p-smail-roker-png-37.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>step-images/2e3d9fc5-6a00-47fd-a85e-05012b63ecd6_1682610016_papik-pro-p-smail-roker-png-37.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\2e3d9fc5-6a00-47fd-a85e-05012b63ecd6_1682610016_papik-pro-p-smail-roker-png-37.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\2f2a804e-fc05-4c95-9c7d-3c6c096ed979_photo_2022-05-21_23-38-15.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>step-images/2f2a804e-fc05-4c95-9c7d-3c6c096ed979_photo_2022-05-21_23-38-15.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\2f2a804e-fc05-4c95-9c7d-3c6c096ed979_photo_2022-05-21_23-38-15.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\42b988be-0c23-4490-932e-dee69403d70f_1682610016_papik-pro-p-smail-roker-png-37.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>step-images/42b988be-0c23-4490-932e-dee69403d70f_1682610016_papik-pro-p-smail-roker-png-37.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\42b988be-0c23-4490-932e-dee69403d70f_1682610016_papik-pro-p-smail-roker-png-37.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\504ef4b9-3f12-4f0f-ab7d-05e0665c5703_1682699370_papik-pro-p-smail-icq-crazy-png-20.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>step-images/504ef4b9-3f12-4f0f-ab7d-05e0665c5703_1682699370_papik-pro-p-smail-icq-crazy-png-20.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\504ef4b9-3f12-4f0f-ab7d-05e0665c5703_1682699370_papik-pro-p-smail-icq-crazy-png-20.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\5a122d8e-850d-4149-b313-51ba18b7449d_Изображение_307.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>step-images/5a122d8e-850d-4149-b313-51ba18b7449d_Изображение_307.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\5a122d8e-850d-4149-b313-51ba18b7449d_Изображение_307.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\9752ff2e-2afc-4cf3-a558-357b8a08ed1f_c5fd5203d45330b065ad8198f2adc96b.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>step-images/9752ff2e-2afc-4cf3-a558-357b8a08ed1f_c5fd5203d45330b065ad8198f2adc96b.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\9752ff2e-2afc-4cf3-a558-357b8a08ed1f_c5fd5203d45330b065ad8198f2adc96b.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\9d490679-5dba-46ad-adfe-5d1170384e3d_itog-5-7.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>step-images/9d490679-5dba-46ad-adfe-5d1170384e3d_itog-5-7.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\9d490679-5dba-46ad-adfe-5d1170384e3d_itog-5-7.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\a0877cdb-9b7e-491f-a556-29fbbe44a5d5_photo_2022-05-21_23-38-15.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>step-images/a0877cdb-9b7e-491f-a556-29fbbe44a5d5_photo_2022-05-21_23-38-15.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\a0877cdb-9b7e-491f-a556-29fbbe44a5d5_photo_2022-05-21_23-38-15.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\a6e866e8-3546-4f49-906d-8b312d014932_1682610016_papik-pro-p-smail-roker-png-37.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>step-images/a6e866e8-3546-4f49-906d-8b312d014932_1682610016_papik-pro-p-smail-roker-png-37.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\a6e866e8-3546-4f49-906d-8b312d014932_1682610016_papik-pro-p-smail-roker-png-37.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\b4fd070e-1e29-49f8-968d-9ab9dbc55509_1682699370_papik-pro-p-smail-icq-crazy-png-20.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>step-images/b4fd070e-1e29-49f8-968d-9ab9dbc55509_1682699370_papik-pro-p-smail-icq-crazy-png-20.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\b4fd070e-1e29-49f8-968d-9ab9dbc55509_1682699370_papik-pro-p-smail-icq-crazy-png-20.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\ea4d6a11-8e73-49d7-9f58-e2e36a41e739_1682699370_papik-pro-p-smail-icq-crazy-png-20.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>step-images/ea4d6a11-8e73-49d7-9f58-e2e36a41e739_1682699370_papik-pro-p-smail-icq-crazy-png-20.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\ea4d6a11-8e73-49d7-9f58-e2e36a41e739_1682699370_papik-pro-p-smail-icq-crazy-png-20.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\fb3a27a8-6849-40b9-9146-2d9072d6522d_c5fd5203d45330b065ad8198f2adc96b.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SmakApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SmakApi</BasePath>
+      <RelativePath>step-images/fb3a27a8-6849-40b9-9146-2d9072d6522d_c5fd5203d45330b065ad8198f2adc96b.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\step-images\fb3a27a8-6849-40b9-9146-2d9072d6522d_c5fd5203d45330b065ad8198f2adc96b.jpg))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

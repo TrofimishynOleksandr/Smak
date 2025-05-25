@@ -1,0 +1,79 @@
+::ng-deep .ng-dropdown-panel {
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  z-index: 10;
+}
+
+::ng-deep .ng-dropdown-panel .ng-option {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+::ng-deep .ng-dropdown-panel .ng-option:hover {
+  background: #f1f1f1;
+}
+
+.ng-select.ingredient-select {
+  width: 100%;
+}
+
+.ng-select.ng-select-custom .ng-select-container {
+  border: 1px solid #2196f3;
+}
+
+.form-row,
+.ingredient-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+
+  .drag-handle {
+    cursor: grab;
+    padding: 0.3rem 0.5rem;
+    user-select: none;
+    font-weight: bold;
+  }
+
+  .ingredient-select {
+    width: 100%;
+    min-width: 200px;
+  }
+
+  .ingredient-select,
+  .ingredient-input,
+  .ingredient-unit {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+
+  .ingredient-unit {
+    flex: 0.7;
+  }
+
+  .remove-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+    align-items: center;
+
+    &:hover {
+      color: #e74c3c;
+    }
+  }
+}

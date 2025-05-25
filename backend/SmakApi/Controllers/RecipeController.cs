@@ -20,6 +20,28 @@ public class RecipeController : ControllerBase
         _recipeService = recipeService;
     }
     
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        Guid? userId = User.Identity?.IsAuthenticated == true
+            ? Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!)
+            : null;
+
+        var recipes = await _recipeService.GetAllAsync(userId);
+        return Ok(recipes);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(Guid id)
+    {
+        var userId = User.Identity!.IsAuthenticated
+            ? Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!)
+            : Guid.Empty;
+
+        var recipe = await _recipeService.GetByIdAsync(id, userId);
+        return Ok(recipe);
+    }
+    
     [HttpPost]
     [Authorize(Roles = "Chef")]
     [Consumes("multipart/form-data")]
@@ -49,26 +71,13 @@ public class RecipeController : ControllerBase
         return NoContent();
     }
     
-    [HttpGet]
-    public async Task<IActionResult> GetAll()
+    [HttpGet("favorites")]
+    [Authorize]
+    public async Task<IActionResult> GetFavorite()
     {
-        Guid? userId = User.Identity?.IsAuthenticated == true
-            ? Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!)
-            : null;
-
-        var recipes = await _recipeService.GetAllAsync(userId);
+        var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+        var recipes = await _recipeService.GetFavoriteAsync(userId);
         return Ok(recipes);
-    }
-
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(Guid id)
-    {
-        var userId = User.Identity!.IsAuthenticated
-            ? Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!)
-            : Guid.Empty;
-
-        var recipe = await _recipeService.GetByIdAsync(id, userId);
-        return Ok(recipe);
     }
     
     [HttpGet("search")]
@@ -113,10 +122,10 @@ public class RecipeController : ControllerBase
 
     [HttpPost("{id}/review")]
     [Authorize]
-    public async Task<IActionResult> AddReview(Guid id, [FromBody] ReviewRequest dto)
+    public async Task<IActionResult> AddReview([FromBody] ReviewRequest dto)
     {
         var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-        await _recipeService.AddReviewAsync(id, userId, dto.Rating, dto.Comment);
+        await _recipeService.AddReviewAsync(userId, dto);
         return Ok();
     }
 }

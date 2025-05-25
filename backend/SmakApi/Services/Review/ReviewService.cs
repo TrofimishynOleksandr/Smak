@@ -31,10 +31,10 @@ public class ReviewService : IReviewService
         }).ToList();
     }
 
-    public async Task UpdateReviewAsync(Guid recipeId, Guid userId, ReviewRequest dto)
+    public async Task UpdateReviewAsync(Guid userId, ReviewRequest dto)
     {
         var review = await _context.Reviews
-                         .FirstOrDefaultAsync(r => r.UserId == userId && r.RecipeId == recipeId)
+                         .FirstOrDefaultAsync(r => r.UserId == userId && r.RecipeId == dto.RecipeId)
                      ?? throw new CustomException("Review not found", 404);
 
         review.Rating = dto.Rating;

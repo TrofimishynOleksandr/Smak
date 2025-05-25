@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using SmakApi.Data.Repositories;
 using SmakApi.Exceptions;
-using SmakApi.Models.Entities;
+using SmakApi.Models.DTOs;
 
 namespace SmakApi.Services.Auth;
 
@@ -41,19 +41,36 @@ public class AuthService : IAuthService
         await _userRepo.SaveChangesAsync();
     }
 
-    public async Task<string> LoginAsync(string email, string password)
+    public async Task<TokenResponse> LoginAsync(string email, string password)
     {
-        var user = (await _userRepo.GetAllAsync()).FirstOrDefault(u => u.Email == email);
-        if (user == null)
-            throw new CustomException("User not found", 404);
+        var user = (await _userRepo.GetAllAsync()).FirstOrDefault(u => u.Email == email)
+                   ?? throw new CustomException("User not found", 404);
 
         var result = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, password);
         if (result == PasswordVerificationResult.Failed)
             throw new CustomException("Invalid credentials", 401);
 
-        return GenerateJwt(user);
+        return new TokenResponse
+        {
+            AccessToken = GenerateJwt(user),
+            RefreshToken = GenerateRefreshJwt(user)
+        };
     }
 
+    public string RefreshAccessToken(string refreshToken)
+    {
+        var principal = GetPrincipalFromExpiredToken(refreshToken);
+
+        if (principal.FindFirstValue("TokenType") != "Refresh")
+            throw new CustomException("Invalid token type", 401);
+
+        var userId = principal.FindFirstValue(ClaimTypes.NameIdentifier);
+        var user = _userRepo.GetAllAsync().Result.FirstOrDefault(u => u.Id == Guid.Parse(userId!))
+                   ?? throw new CustomException("User not found", 404);
+
+        return GenerateJwt(user);
+    }
+    
     private string GenerateJwt(Models.Entities.User user)
     {
         var claims = new[]
@@ -65,12 +82,49 @@ public class AuthService : IAuthService
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+        
         var token = new JwtSecurityToken(
             claims: claims,
-            expires: DateTime.UtcNow.AddHours(1),
+            expires: DateTime.UtcNow.AddMinutes(15),
             signingCredentials: creds
         );
 
         return new JwtSecurityTokenHandler().WriteToken(token);
+    }
+    
+    private string GenerateRefreshJwt(Models.Entities.User user)
+    {
+        var claims = new[]
+        {
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new Claim("TokenType", "Refresh")
+        };
+
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));
+        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+        var token = new JwtSecurityToken(
+            claims: claims,
+            expires: DateTime.UtcNow.AddDays(7),
+            signingCredentials: creds
+        );
+
+        return new JwtSecurityTokenHandler().WriteToken(token);
+    }
+    
+    private ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
+    {
+        var tokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateAudience = false,
+            ValidateIssuer = false,
+            ValidateIssuerSigningKey = true,
+            ValidateLifetime = false,
+
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!))
+        };
+
+        var tokenHandler = new JwtSecurityTokenHandler();
+        return tokenHandler.ValidateToken(token, tokenValidationParameters, out _);
     }
 }

@@ -1,0 +1,21 @@
+<div class="collection">
+  <h2 class="collection__title">Популярні автори</h2>
+  <div class="collection__wrapper">
+    <button class="scroll-btn left" (click)="scroll('left')">
+      <svg icon="arrow-left" size="24" class="icon24"></svg>
+    </button>
+    <div class="collection__slider" #scrollContainer>
+      <div
+        class="chef-item"
+        *ngFor="let chef of chefs"
+        [routerLink]="['/chef', chef.id]"
+      >
+        <img [src]="chef.avatarUrl | avatarUrl" alt="Chef Avatar" />
+        <div class="name">{{ chef.name }}</div>
+      </div>
+    </div>
+    <button class="scroll-btn right" (click)="scroll('right')">
+      <svg icon="arrow-right" size="24" class="icon24" />
+    </button>
+  </div>
+</div>

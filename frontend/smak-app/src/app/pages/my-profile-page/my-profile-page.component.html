@@ -1,0 +1,26 @@
+<div class="profile" *ngIf="user()">
+  <h2>Мій профіль</h2>
+
+  <div class="avatar-wrapper">
+    <img
+      [src]="user()?.avatarUrl | avatarUrl"
+      alt="avatar"
+      class="avatar"
+    />
+  </div>
+
+  <div class="upload-wrapper">
+    <label for="avatarInput" class="file-label">
+      <svg icon="upload" size="20" class="icon24" />
+      Завантажити новий
+      <input id="avatarInput" type="file" (change)="onFileChange($event)" accept="image/*" hidden />
+    </label>
+
+    <button class="remove-btn" type="button" (click)="removeAvatar()">Видалити</button>
+  </div>
+
+  <div class="info">
+    <p><strong>Ім’я:</strong> {{ user()?.name }}</p>
+    <p><strong>Email:</strong> {{ user()?.email }}</p>
+  </div>
+</div>

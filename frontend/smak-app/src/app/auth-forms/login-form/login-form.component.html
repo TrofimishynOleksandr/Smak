@@ -1,0 +1,19 @@
+<h2 class="auth-form__title">Увійти</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="auth-form">
+  <input type="email" formControlName="email" class="auth-form__input" placeholder="Email" />
+  <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="auth-form__error">
+    Некоректна пошта
+  </div>
+
+  <input type="password" formControlName="password" class="auth-form__input" placeholder="Пароль" />
+  <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched" class="auth-form__error">
+    Пароль обов’язковий
+  </div>
+
+  <button type="submit" class="auth-form__submit" [disabled]="form.invalid">Увійти</button>
+
+  <p class="auth-form__link">
+    Ще не маєте акаунту?
+    <a href="#" (click)="switchToRegister($event)">Зареєструватися</a>
+  </p>
+</form>

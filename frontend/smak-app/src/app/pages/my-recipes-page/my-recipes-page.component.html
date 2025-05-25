@@ -1,0 +1,10 @@
+<section class="my-recipes">
+  <div class="header">
+    <h2>Мої рецепти</h2>
+    <button class="create-btn" routerLink="/my-recipes/create">Створити новий рецепт</button>
+  </div>
+
+  <div class="recipes">
+    <app-recipe-card *ngFor="let recipe of recipes" [recipe]="recipe" />
+  </div>
+</section>

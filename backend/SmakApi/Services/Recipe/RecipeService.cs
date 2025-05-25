@@ -43,7 +43,7 @@ public class RecipeService : IRecipeService
 
             if (existingIngredient == null)
             {
-                existingIngredient = new Ingredient
+                existingIngredient = new Models.Entities.Ingredient
                 {
                     Id = Guid.NewGuid(),
                     Name = i.Name,
@@ -146,6 +146,31 @@ public class RecipeService : IRecipeService
         return result.ToList();
     }
 
+    public async Task<IEnumerable<RecipeShortDto>> GetFavoriteAsync(Guid? userId = null)
+    {
+        var recipes = await _context.Recipes
+            .Include(r => r.Author)
+            .Include(r => r.Category)
+            .Include(r => r.Reviews)
+            .Include(r => r.Favorites)
+            .Where(r => r.Favorites.Any(f => f.UserId == userId))
+            .ToListAsync();
+
+        var result = recipes.Select(r => new RecipeShortDto
+        {
+            Id = r.Id,
+            Title = r.Title,
+            Description = r.Description,
+            ImageUrl = r.ImageUrl,
+            CookTimeMinutes = r.CookTimeMinutes,
+            AuthorName = r.Author.Name,
+            AverageRating = r.Reviews.Any() ? Math.Round(r.Reviews.Average(rev => rev.Rating), 2) : 0,
+            RatingsCount = r.Reviews.Count,
+            IsFavorite = true
+        });
+
+        return result.ToList();
+    }
 
     public async Task<RecipeDetailsDto> GetByIdAsync(Guid recipeId, Guid currentUserId)
     {
@@ -155,7 +180,8 @@ public class RecipeService : IRecipeService
                          .Include(r => r.Ingredients)
                             .ThenInclude(ii => ii.Ingredient)
                          .Include(r => r.Instructions)
-                         .Include(r => r.Reviews).ThenInclude(r => r.User)
+                         .Include(r => r.Reviews)
+                            .ThenInclude(r => r.User)
                          .Include(r => r.Favorites)
                          .FirstOrDefaultAsync(r => r.Id == recipeId)
                      ?? throw new CustomException("Recipe not found", 404);
@@ -170,9 +196,15 @@ public class RecipeService : IRecipeService
             Description = recipe.Description,
             ImageUrl = recipe.ImageUrl,
             CookTimeMinutes = recipe.CookTimeMinutes,
+            AuthorId = recipe.AuthorId,
             AuthorName = recipe.Author.Name,
             CategoryName = recipe.Category.Name,
-            Ingredients = _mapper.Map<List<IngredientItemDto>>(recipe.Ingredients),
+            Ingredients = recipe.Ingredients.Select(ii => new IngredientItemDto
+            {
+                Name = ii.Ingredient.Name,
+                Quantity = ii.Quantity,
+                Unit = ii.Unit?.ToUkrainian()
+            }).ToList(),
             Instructions = recipe.Instructions.Select(i => new InstructionStepDto
             {
                 StepNumber = i.StepNumber,
@@ -182,10 +214,10 @@ public class RecipeService : IRecipeService
             AverageRating = recipe.Reviews.Any() ? recipe.Reviews.Average(r => r.Rating) : 0,
             RatingsCount = recipe.Reviews.Count,
             Reviews = recipe.Reviews
-                .Where(r => !string.IsNullOrWhiteSpace(r.Comment))
                 .Select(r => new ReviewDto
                 {
                     Author = r.User.Name,
+                    AuthorId = r.UserId,
                     AvatarUrl = r.User.AvatarUrl,
                     Rating = r.Rating,
                     Comment = r.Comment!,
@@ -222,18 +254,18 @@ public class RecipeService : IRecipeService
         }
     }
 
-    public async Task AddReviewAsync(Guid recipeId, Guid userId, int rating, string? comment)
+    public async Task AddReviewAsync(Guid userId, ReviewRequest dto)
     {
-        if (rating < 1 || rating > 5)
+        if (dto.Rating < 1 || dto.Rating > 5)
             throw new CustomException("Rating must be between 1 and 5", 400);
 
         var existing = await _context.Reviews
-            .FirstOrDefaultAsync(r => r.RecipeId == recipeId && r.UserId == userId);
+            .FirstOrDefaultAsync(r => r.RecipeId == dto.RecipeId && r.UserId == userId);
 
         if (existing != null)
         {
-            existing.Rating = rating;
-            existing.Comment = comment;
+            existing.Rating = dto.Rating;
+            existing.Comment = dto.Comment;
             existing.CreatedAt = DateTime.UtcNow;
         }
         else
@@ -241,10 +273,10 @@ public class RecipeService : IRecipeService
             var review = new Models.Entities.Review
             {
                 Id = Guid.NewGuid(),
-                RecipeId = recipeId,
+                RecipeId = dto.RecipeId,
                 UserId = userId,
-                Rating = rating,
-                Comment = comment,
+                Rating = dto.Rating,
+                Comment = dto.Comment,
                 CreatedAt = DateTime.UtcNow
             };
 
@@ -297,7 +329,7 @@ public class RecipeService : IRecipeService
                 AuthorName = r.Author.Name,
                 AverageRating = r.Reviews.Any() ? Math.Round(r.Reviews.Average(r => r.Rating), 2) : 0,
                 RatingsCount = r.Reviews.Count,
-                IsFavorite = userId.HasValue && r.Favorites.Any(f => f.UserId == userId)
+                IsFavorite = userId != null && r.Favorites.Any(f => f.UserId == userId)
             });
 
         filtered = query.SortBy switch
@@ -341,7 +373,7 @@ public class RecipeService : IRecipeService
             {
                 Title = "Популярні рецепти",
                 Recipes = Project(allRecipes
-                    .Where(r => r.Reviews.Count >= 3)
+                    .Where(r => r.Reviews.Count >= 1)
                     .OrderByDescending(r => r.Reviews.Average(x => x.Rating)))
             },
             new()
@@ -372,7 +404,7 @@ public class RecipeService : IRecipeService
 
             if (existingIngredient == null)
             {
-                existingIngredient = new Ingredient
+                existingIngredient = new Models.Entities.Ingredient
                 {
                     Id = Guid.NewGuid(),
                     Name = i.Name,

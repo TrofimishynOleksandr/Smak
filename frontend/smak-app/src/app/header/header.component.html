@@ -1,0 +1,27 @@
+<header class="header">
+  <div class="header__container">
+    <a routerLink="/" class="header__logo">Smak</a>
+
+    <input
+      type="text"
+      class="header__search"
+      placeholder="Пошук рецептів..."
+      [(ngModel)]="searchQuery"
+      (keydown.enter)="search()" />
+
+    <div class="header__profile" (click)="toggleDropdown()">
+      <img [src]="avatarUrl | avatarUrl" alt="avatar" class="header__avatar">
+      <span class="header__name">{{ userName }}</span>
+
+      <div class="header__dropdown" *ngIf="isDropdownOpen() && authService.isAuth">
+        <a routerLink="/me">Мій обліковий запис</a>
+        <a routerLink="/favorites">Улюблені рецепти</a>
+        <a *ngIf="authService.userRole === 'Chef'" routerLink="/my-recipes">Мої рецепти</a>
+        <a *ngIf="authService.userRole === 'Chef'" routerLink="/my-recipes/create">Створити рецепт</a>
+        <a *ngIf="authService.userRole === 'Admin'" routerLink="/admin">Адмін-панель</a>
+        <hr>
+        <button (click)="logout()">Вийти</button>
+      </div>
+    </div>
+  </div>
+</header>

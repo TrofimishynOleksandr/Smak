@@ -18,6 +18,13 @@ public class UserController : ControllerBase
         _userService = userService;
     }
 
+    [HttpGet("{chefId}")]
+    public async Task<IActionResult> GetChef(Guid chefId)
+    {
+        var chef = await _userService.GetChefAsync(chefId);
+        return Ok(chef);
+    }
+    
     [HttpGet("popular-chefs")]
     public async Task<IActionResult> GetPopularChefs()
     {
@@ -47,11 +54,11 @@ public class UserController : ControllerBase
     [HttpPost("avatar")]
     [Authorize]
     [Consumes("multipart/form-data")]
-    public async Task<IActionResult> UploadAvatar(AvatarUploadDto dto)
+    public async Task<IActionResult> UploadAvatar([FromForm] AvatarUploadDto dto)
     {
         var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
         var path = await _userService.UploadAvatarAsync(userId, dto.Image);
-        return Ok(new { avatarUrl = ImageHelper.ToFullImageUrl(path, Request) });
+        return Ok(new { avatarUrl = path });
     }
 
     [HttpDelete("avatar")]

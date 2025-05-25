@@ -28,10 +28,10 @@ public class ReviewController : ControllerBase
     
     [HttpPut("{recipeId}")]
     [Authorize]
-    public async Task<IActionResult> UpdateReview(Guid recipeId, [FromBody] ReviewRequest dto)
+    public async Task<IActionResult> UpdateReview([FromBody] ReviewRequest dto)
     {
         var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-        await _service.UpdateReviewAsync(recipeId, userId, dto);
+        await _service.UpdateReviewAsync(userId, dto);
         return Ok("Review updated");
     }
 

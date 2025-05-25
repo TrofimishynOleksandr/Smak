@@ -1,0 +1,47 @@
+.auth-modal__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.auth-modal__window {
+  background: white;
+  padding: 32px;
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+}
+
+.auth-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.auth-modal__window.animate {
+  animation: slideIn 0.25s ease-out;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

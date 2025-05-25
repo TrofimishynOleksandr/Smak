@@ -1,0 +1,22 @@
+<h2 class="auth-form__title">Реєстрація</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="auth-form">
+  <input type="text" formControlName="name" class="auth-form__input" placeholder="Ім’я" />
+  <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched" class="auth-form__error">Ім’я обов’язкове</div>
+
+  <input type="email" formControlName="email" class="auth-form__input" placeholder="Email" />
+  <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="auth-form__error">
+    Некоректна пошта
+  </div>
+
+  <input type="password" formControlName="password" class="auth-form__input" placeholder="Пароль" />
+  <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched" class="auth-form__error">
+    Пароль має бути не менше 8 символів і містити цифри та літери
+  </div>
+
+  <button type="submit" class="auth-form__submit" [disabled]="form.invalid">Зареєструватися</button>
+
+  <p class="auth-form__link">
+    Вже маєте акаунт?
+    <a href="#" (click)="switchToLogin($event)">Увійти</a>
+  </p>
+</form>

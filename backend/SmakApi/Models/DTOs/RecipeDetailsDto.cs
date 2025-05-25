@@ -7,6 +7,7 @@ public class RecipeDetailsDto
     public string Description { get; set; } = null!;
     public string? ImageUrl { get; set; }
     public int CookTimeMinutes { get; set; }
+    public Guid AuthorId { get; set; }
     public string AuthorName { get; set; } = null!;
     public string CategoryName { get; set; } = null!;
     public List<IngredientItemDto> Ingredients { get; set; } = new();

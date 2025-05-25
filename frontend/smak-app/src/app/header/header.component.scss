@@ -1,0 +1,88 @@
+@import "theme";
+@import "spacing";
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: $white;
+  border-bottom: 1px solid $border-color;
+  padding: $spacing-unit * 2;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    @include heading(1.5rem);
+    text-decoration: none;
+  }
+
+  &__search {
+    flex: 1;
+    margin: 0 $spacing-unit * 2;
+    @include input;
+  }
+
+  &__profile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+
+    &:hover .header__name {
+      text-decoration: underline;
+    }
+  }
+
+  &__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__name {
+    font-weight: 500;
+    color: $text-color;
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: $white;
+    border: 1px solid $border-color;
+    padding: $spacing-unit * 1.25;
+    border-radius: $radius;
+    margin-top: $spacing-unit;
+    display: flex;
+    flex-direction: column;
+    gap: calc($spacing-unit / 2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+
+    a,
+    button {
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 0.5rem;
+      cursor: pointer;
+      color: $text-color;
+
+      &:hover {
+        background: $background-color;
+      }
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid $border-color;
+      margin: 0.5rem 0;
+    }
+  }
+}

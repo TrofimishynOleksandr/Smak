@@ -1,0 +1,5 @@
+$spacing-unit: 8px;
+
+@mixin spacing($property, $multiplier) {
+  #{$property}: $spacing-unit * $multiplier;
+}

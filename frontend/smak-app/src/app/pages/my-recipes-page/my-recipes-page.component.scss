@@ -1,0 +1,27 @@
+@import 'theme';
+
+.my-recipes {
+  padding: 2rem;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    h2 {
+      @include heading(1.6rem);
+    }
+
+    .create-btn {
+      @include button;
+      font-size: 0.95rem;
+    }
+  }
+
+  .recipes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+}

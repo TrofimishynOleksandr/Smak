@@ -14,6 +14,7 @@ using SmakApi.Models.Entities;
 using SmakApi.Services.AdminUser;
 using SmakApi.Services.Auth;
 using SmakApi.Services.Category;
+using SmakApi.Services.Ingredient;
 using SmakApi.Services.Recipe;
 using SmakApi.Services.Review;
 using SmakApi.Services.User;
@@ -93,6 +94,7 @@ builder.Services.AddScoped<IRecipeService, RecipeService>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAdminUserService, AdminUserService>();
+builder.Services.AddScoped<IIngredientService, IngredientService>();
 
 builder.Services.AddCors(options =>
 {
@@ -110,6 +112,7 @@ var app = builder.Build();
 app.UseStaticFiles();
 app.UseCors("AllowFrontend");
 
+app.UseMiddleware<JwtValidationMiddleware>();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 if (app.Environment.IsDevelopment())

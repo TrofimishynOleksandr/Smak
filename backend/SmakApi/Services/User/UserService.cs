@@ -31,6 +31,7 @@ public class UserService : IUserService
             {
                 Id = c.Id,
                 Name = c.Name,
+                AvatarUrl = c.AvatarUrl,
                 RecipesCount = c.Recipes.Count,
                 AverageRating = c.Recipes
                     .Where(r => r.Reviews.Any())
@@ -55,6 +56,19 @@ public class UserService : IUserService
             Email = user.Email,
             AvatarUrl = user.AvatarUrl,
             Role = user.Role.ToString()
+        };
+    }
+    
+    public async Task<ChefInfoDto> GetChefAsync(Guid chefId)
+    {
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == chefId)
+                   ?? throw new CustomException("User not found", 404);
+
+        return new ChefInfoDto
+        {
+            Id = user.Id,
+            Name = user.Name,
+            AvatarUrl = user.AvatarUrl,
         };
     }
 

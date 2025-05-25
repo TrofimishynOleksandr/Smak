@@ -1,0 +1,16 @@
+<div class="collection">
+  <h2 class="collection__title">{{ title }}</h2>
+  <div class="collection__wrapper">
+    <button class="scroll-btn left" (click)="scroll('left')">
+      <svg icon="arrow-left" size="24" class="icon24"></svg>
+    </button>
+    <div class="collection__slider" [attr.id]="title">
+      <app-recipe-card *ngFor="let recipe of recipes"
+                       [recipe]="recipe"
+                       class="collection__card"></app-recipe-card>
+    </div>
+    <button class="scroll-btn right" (click)="scroll('right')">
+      <svg icon="arrow-right" size="24" class="icon24"></svg>
+    </button>
+  </div>
+</div>

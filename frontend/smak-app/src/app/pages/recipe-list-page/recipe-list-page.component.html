@@ -1,0 +1,22 @@
+<div class="filter-panel">
+  <input type="text" [formControl]="filters.controls.search" placeholder="Пошук" />
+
+  <select [formControl]="filters.controls.categoryId">
+    <option [ngValue]="null">Всі категорії</option>
+    <option *ngFor="let c of categories()" [value]="c.id">{{ c.name }}</option>
+  </select>
+
+  <input type="number" [formControl]="filters.controls.maxCookTime" placeholder="Макс. час (хв)" />
+  <input type="number" [formControl]="filters.controls.minRating" placeholder="Мін. рейтинг" />
+
+  <select [formControl]="filters.controls.sortBy">
+    <option value="">Без сортування</option>
+    <option value="rating">За рейтингом</option>
+    <option value="time">За часом</option>
+    <option value="popular">За популярністю</option>
+  </select>
+</div>
+
+<div class="recipe-grid">
+  <app-recipe-card *ngFor="let recipe of recipes()" [recipe]="recipe" />
+</div>

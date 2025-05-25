@@ -1,0 +1,77 @@
+.step-preview-small {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+
+  .file-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #06a561;
+    color: white;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      background-color: #04814c;
+    }
+  }
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+
+  .drag-handle {
+    cursor: grab;
+    padding: 0.3rem 0.5rem;
+    user-select: none;
+    font-weight: bold;
+  }
+
+  textarea {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  input[type="file"] {
+    margin-top: 0.3rem;
+    align-self: flex-start;
+  }
+
+  .remove-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+
+    &:hover {
+      color: #e74c3c;
+    }
+  }
+}

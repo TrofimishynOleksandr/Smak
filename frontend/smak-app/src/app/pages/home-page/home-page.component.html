@@ -1,0 +1,11 @@
+<section class="collections">
+  <app-categories-slider [categories]="categories"></app-categories-slider>
+
+  <app-recipe-collection
+    *ngFor="let collection of collections"
+    [title]="collection.title"
+    [recipes]="collection.recipes">
+  </app-recipe-collection>
+
+  <app-chefs-slider [chefs]="chefs"></app-chefs-slider>
+</section>

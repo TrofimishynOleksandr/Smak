@@ -1,0 +1,45 @@
+@import 'colors';
+
+$radius: 8px;
+
+@mixin button {
+  background-color: $primary-color;
+  color: $white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: $radius;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $primary-dark;
+  }
+
+  &:disabled {
+    background-color: $muted-color;
+    cursor: not-allowed;
+  }
+}
+
+@mixin input {
+  padding: 10px 14px;
+  border-radius: $radius;
+  border: 1px solid $border-color;
+  font-size: 14px;
+  background: $white;
+  color: $text-color;
+}
+
+@mixin card {
+  background-color: $white;
+  border-radius: $radius;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+@mixin heading($size: 1.5rem) {
+  font-size: $size;
+  font-weight: 600;
+  color: $text-color;
+}

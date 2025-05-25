@@ -1,0 +1,11 @@
+<div class="chef-profile">
+  <div class="chef-header">
+    <img [src]="avatarUrl | avatarUrl" alt="avatar" class="avatar" />
+    <h2>{{ chefName }}</h2>
+  </div>
+
+  <h3>Рецепти</h3>
+  <div class="recipes-grid">
+    <app-recipe-card *ngFor="let recipe of recipes" [recipe]="recipe" />
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<div *ngIf="recipe" class="recipe-details">
+  <div class="left">
+    <div class="image-wrapper">
+      <img [src]="recipe.imageUrl | recipeImageUrl" alt="recipe image" class="main-image" />
+      <button class="like-button" (click)="toggleFavorite()" [class.filled]="isFavorite()">
+        <svg icon="heart-big" size="36" class="icon36" />
+      </button>
+    </div>
+    <div class="steps">
+      <h3>Інструкція</h3>
+      <div *ngFor="let step of recipe.instructions; index as i" class="step">
+        <div class="step-description">
+          <div class="step-number">{{ i + 1 }}</div>
+          <div class="step-text">{{ step.description }}</div>
+        </div>
+        <img *ngIf="step.imageUrl" [src]="step.imageUrl | stepImageUrl" alt="step" class="step-image" />
+      </div>
+    </div>
+  </div>
+
+  <div class="right">
+    <h1 class="title">{{ recipe.title }}</h1>
+    <p class="description">{{ recipe.description }}</p>
+
+    <h3>Інгредієнти</h3>
+    <div class="ingredients">
+      <div *ngFor="let ing of recipe.ingredients" class="ingredient">
+        <span class="name">{{ ing.name }}</span>
+        <span class="dot-fill"></span>
+        <span class="amount">{{ ing.quantity }} {{ ing.unit }}</span>
+      </div>
+    </div>
+
+    <div class="meta">
+      <div class="author">Автор: <a [routerLink]="['/chef', recipe.authorId]">{{ recipe.authorName }}</a></div>
+      <div class="cook-time">
+        <svg icon="clock" class="icon16" /> {{ recipe.cookTimeMinutes }} хв.
+      </div>
+      <div class="rating">
+        <div class="reviews-count">
+          <span class="count">{{ recipe.ratingsCount }}</span>
+          <svg icon="comments" size="16" class="icon16"></svg>
+        </div>
+        <div class="stars">
+          <ng-container *ngFor="let filled of starFillArray">
+            <svg icon="star" class="icon16" [ngClass]="{ 'filled': filled }"></svg>
+          </ng-container>
+        </div>
+      </div>
+
+      <button *ngIf="isOwner" (click)="deleteRecipe()" class="delete-btn">
+        <svg icon="trash" class="icon16" /> Видалити
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="review-form" *ngIf="authService.isAuth && canReview">
+  <h3>Залишити відгук</h3>
+  <form [formGroup]="reviewForm" (ngSubmit)="submitReview()">
+    <div class="form-row">
+      <label>Оцінка:</label>
+      <select formControlName="rating">
+        <option *ngFor="let r of [5,4,3,2,1]" [value]="r">{{ r }}</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <textarea formControlName="comment" placeholder="Ваш коментар..." rows="3"></textarea>
+    </div>
+    <button type="submit" [disabled]="reviewForm.invalid">Надіслати</button>
+  </form>
+</div>
+
+
+<div class="reviews" *ngIf="recipe?.reviews?.length">
+  <div *ngFor="let review of recipe?.reviews" class="review">
+    <div class="review-header">
+      <strong>{{ review.author }}</strong>
+      <div class="review-right">
+        <div class="stars">
+          <svg icon="star" class="icon16" *ngFor="let i of [1,2,3,4,5]" [ngClass]="{ 'filled': i <= review.rating }"></svg>
+        </div>
+        <button *ngIf="review.authorId === currentUserId" class="delete-review-btn" (click)="deleteReview()">✕</button>
+      </div>
+    </div>
+    <div class="review-text" *ngIf="review.comment; else noComment">
+      {{ review.comment }}
+    </div>
+    <ng-template #noComment>
+      <div class="review-text muted">Без коментаря</div>
+    </ng-template>
+    <div class="review-date">{{ review.createdAt | date: 'mediumDate' }}</div>
+  </div>
+</div>

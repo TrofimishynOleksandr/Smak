@@ -1,0 +1,9 @@
+<div *ngIf="modal.modal$ | async as type" class="auth-modal__backdrop">
+  <div class="auth-modal__window animate">
+    <button class="auth-modal__close" (click)="close()">×</button>
+    <ng-container [ngSwitch]="type">
+      <app-login-form *ngSwitchCase="'login'" (success)="onSuccess()" />
+      <app-register-form *ngSwitchCase="'register'" (success)="onSuccess()" />
+    </ng-container>
+  </div>
+</div>
