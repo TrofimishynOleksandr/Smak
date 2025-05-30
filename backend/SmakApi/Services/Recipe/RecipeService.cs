@@ -216,6 +216,7 @@ public class RecipeService : IRecipeService
             Reviews = recipe.Reviews
                 .Select(r => new ReviewDto
                 {
+                    Id = r.Id,
                     Author = r.User.Name,
                     AuthorId = r.UserId,
                     AvatarUrl = r.User.AvatarUrl,

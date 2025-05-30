@@ -2,6 +2,7 @@
 
 public class ReviewDto
 {
+    public Guid Id { get; set; }
     public string Author { get; set; } = null!;
     public Guid AuthorId { get; set; }
     public string? AvatarUrl { get; set; }

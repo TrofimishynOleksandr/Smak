@@ -7,7 +7,7 @@ import {IngredientDto, UnitDto} from '../interfaces/ingredient.interface';
 
 @Injectable({ providedIn: 'root' })
 export class RecipeService {
-  private api = 'http://localhost:5127/api';
+  private api = 'http://192.168.0.103:5127/api';
   httpClient = inject(HttpClient);
 
   getCollections() {

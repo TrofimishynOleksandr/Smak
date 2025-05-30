@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmakApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3235b76117274bf87d560996e1a7ffa5405ac796")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f886c8bcee4021dca0c74d64a3f0bee8f157fe4e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmakApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmakApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

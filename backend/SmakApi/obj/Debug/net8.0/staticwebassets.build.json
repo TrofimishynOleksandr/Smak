@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lMn5WLjH0zL8YVNz5hV4GPDDHpNf+6tF8JH0VeGLxjI=",
+  "Hash": "SLRwLlO9zc4H5mwLiYlUzBmK0inqVTPSObWyYf8YJmg=",
   "Source": "SmakApi",
   "BasePath": "_content/SmakApi",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\avatar-images\\055ad752-5b39-4fdd-8389-63a0eee9adc3_chief_4-800x800.jpg",
+      "SourceId": "SmakApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\",
+      "BasePath": "_content/SmakApi",
+      "RelativePath": "avatar-images/055ad752-5b39-4fdd-8389-63a0eee9adc3_chief_4-800x800.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\avatar-images\\055ad752-5b39-4fdd-8389-63a0eee9adc3_chief_4-800x800.jpg"
+    },
     {
       "Identity": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\avatar-images\\513e67a4-f36a-49e7-8cc8-ff043d69345f_vfy-e1555920098225.png",
       "SourceId": "SmakApi",
@@ -74,25 +93,6 @@
       "OriginalItemSpec": "wwwroot\\avatar-images\\5eb465f6-5b19-4ad2-8886-3535fd707425_depositphotos_19894923-stock-photo-young-woman-chef-cooking-in.jpg"
     },
     {
-      "Identity": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\avatar-images\\7cd3d608-a929-4fd3-870e-13ef5aa4dd85_chief_4-800x800.jpg",
-      "SourceId": "SmakApi",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\",
-      "BasePath": "_content/SmakApi",
-      "RelativePath": "avatar-images/7cd3d608-a929-4fd3-870e-13ef5aa4dd85_chief_4-800x800.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\avatar-images\\7cd3d608-a929-4fd3-870e-13ef5aa4dd85_chief_4-800x800.jpg"
-    },
-    {
       "Identity": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\avatar-images\\847ff279-2d0e-46d1-8d34-437e6174fc46_photo_2022-05-21_23-38-15.jpg",
       "SourceId": "SmakApi",
       "SourceType": "Discovered",
@@ -148,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\category-images\\28040b81-444b-486f-bcc6-38f1037e7c0a_5e67a73d62661.jpg"
+    },
+    {
+      "Identity": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\category-images\\31a4d228-fbbf-4e63-868a-84bbbf5f3be2_Screenshot_20250530_125030_Chrome.jpg",
+      "SourceId": "SmakApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\",
+      "BasePath": "_content/SmakApi",
+      "RelativePath": "category-images/31a4d228-fbbf-4e63-868a-84bbbf5f3be2_Screenshot_20250530_125030_Chrome.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\category-images\\31a4d228-fbbf-4e63-868a-84bbbf5f3be2_Screenshot_20250530_125030_Chrome.jpg"
     },
     {
       "Identity": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\category-images\\47a31f68-9d6d-4e8f-803b-a0f45a0cdda1_h95ay822gy45mnltfm4698ij6u3spds1.png",
@@ -340,6 +359,25 @@
       "OriginalItemSpec": "wwwroot\\recipe-images\\27cc1f58-7014-4575-ac0c-4279796cfbdc_c5fd5203d45330b065ad8198f2adc96b.jpg"
     },
     {
+      "Identity": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\recipe-images\\2c1f90bf-0a83-4efc-90f2-88bd3c1d3c83_1682699370_papik-pro-p-smail-icq-crazy-png-20.jpg",
+      "SourceId": "SmakApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\",
+      "BasePath": "_content/SmakApi",
+      "RelativePath": "recipe-images/2c1f90bf-0a83-4efc-90f2-88bd3c1d3c83_1682699370_papik-pro-p-smail-icq-crazy-png-20.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\recipe-images\\2c1f90bf-0a83-4efc-90f2-88bd3c1d3c83_1682699370_papik-pro-p-smail-icq-crazy-png-20.jpg"
+    },
+    {
       "Identity": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\recipe-images\\37a22db7-0dc5-4558-a4aa-ce4a2a612d8c_itog-5-7.jpg",
       "SourceId": "SmakApi",
       "SourceType": "Discovered",
@@ -473,6 +511,25 @@
       "OriginalItemSpec": "wwwroot\\recipe-images\\aae2b2c9-aaca-428f-ba5c-2a5f370bf0c7_1682610016_papik-pro-p-smail-roker-png-37.jpg"
     },
     {
+      "Identity": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\recipe-images\\c3c740de-2215-4636-8d70-8ee5a9dc5958_freepik__com__1__c0d793b92830049867cff54f671df98e_1200x675.jpg",
+      "SourceId": "SmakApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\",
+      "BasePath": "_content/SmakApi",
+      "RelativePath": "recipe-images/c3c740de-2215-4636-8d70-8ee5a9dc5958_freepik__com__1__c0d793b92830049867cff54f671df98e_1200x675.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\recipe-images\\c3c740de-2215-4636-8d70-8ee5a9dc5958_freepik__com__1__c0d793b92830049867cff54f671df98e_1200x675.jpg"
+    },
+    {
       "Identity": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\recipe-images\\c63f2201-60f6-4d1f-998b-f3870b1b9f99_itog-5-7.jpg",
       "SourceId": "SmakApi",
       "SourceType": "Discovered",
@@ -585,6 +642,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\step-images\\13a3792b-8d81-4e07-86c8-0a9d4b95c15d_1682699370_papik-pro-p-smail-icq-crazy-png-20.jpg"
+    },
+    {
+      "Identity": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\step-images\\2a30f73b-d5ba-4ef5-b35e-9ec95e2352bf_c5fd5203d45330b065ad8198f2adc96b.jpg",
+      "SourceId": "SmakApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\",
+      "BasePath": "_content/SmakApi",
+      "RelativePath": "step-images/2a30f73b-d5ba-4ef5-b35e-9ec95e2352bf_c5fd5203d45330b065ad8198f2adc96b.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\step-images\\2a30f73b-d5ba-4ef5-b35e-9ec95e2352bf_c5fd5203d45330b065ad8198f2adc96b.jpg"
     },
     {
       "Identity": "C:\\Other\\Proga\\WebCW\\Smak\\backend\\SmakApi\\wwwroot\\step-images\\2e3d9fc5-6a00-47fd-a85e-05012b63ecd6_1682610016_papik-pro-p-smail-roker-png-37.jpg",

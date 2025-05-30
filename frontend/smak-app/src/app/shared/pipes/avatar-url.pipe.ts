@@ -7,6 +7,6 @@ import {Pipe, PipeTransform} from '@angular/core';
 export class AvatarUrlPipe implements PipeTransform {
   transform(value: string | null | undefined): string {
     if (!value) return '/assets/images/avatar-placeholder.png';
-    return `http://localhost:5127${value}`;
+    return `http://192.168.0.103:5127${value}`;
   }
 }

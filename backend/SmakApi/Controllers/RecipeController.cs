@@ -122,9 +122,10 @@ public class RecipeController : ControllerBase
 
     [HttpPost("{id}/review")]
     [Authorize]
-    public async Task<IActionResult> AddReview([FromBody] ReviewRequest dto)
+    public async Task<IActionResult> AddReview(Guid id, [FromBody] ReviewRequest dto)
     {
         var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+        dto.RecipeId = id;
         await _recipeService.AddReviewAsync(userId, dto);
         return Ok();
     }

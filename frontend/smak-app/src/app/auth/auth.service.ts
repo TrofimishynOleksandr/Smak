@@ -16,7 +16,7 @@ export class AuthService {
   cookieService = inject(CookieService)
   modalService = inject(ModalService);
 
-  baseApiUrl: string = 'http://localhost:5127/api/auth';
+  baseApiUrl: string = 'http://192.168.0.103:5127/api/auth';
   shouldSuppressModal = false;
   loginSuccess$ = new Subject<void>();
   logout$ = new Subject<void>();
@@ -32,7 +32,7 @@ export class AuthService {
   }
 
   loadCurrentUser() {
-    return this.http.get<CurrentUser>('http://localhost:5127/api/user/me').pipe(
+    return this.http.get<CurrentUser>('http://192.168.0.103:5127/api/user/me').pipe(
       tap(user => this.currentUser = user),
       catchError(() => {
         this.logout(); // або просто повернути null
@@ -64,18 +64,17 @@ export class AuthService {
   uploadAvatar(file: File) {
     const formData = new FormData();
     formData.append('image', file);
-    return this.http.post<{avatarUrl: string}>('http://localhost:5127/api/user/avatar', formData);
+    return this.http.post<{avatarUrl: string}>('http://192.168.0.103:5127/api/user/avatar', formData);
   }
 
   deleteAvatar() {
-    return this.http.delete('http://localhost:5127/api/user/avatar');
+    return this.http.delete('http://192.168.0.103:5127/api/user/avatar');
   }
 
   register(payload: {name: string; email: string; password: string}) {
     return this.http.post<void>(
       `${this.baseApiUrl}/register`,
-      payload,
-      { headers: { 'Content-Type': 'application/json' } }
+      payload
     ).pipe(
       tap(() => this.router.navigate(['/login']))
     );

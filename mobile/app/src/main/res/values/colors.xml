@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="pink">#e55a5a</color>
+    <color name="gray">#999999</color>
+    <color name="starFilled">#ffc107</color>
+    <color name="mutedColor">#999999</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="text_primary">#333333</color>
+    <color name="backgroundColor">#EEEEEEEE</color>
+    <color name="primaryColor">#ff6b6b</color>
+    <color name="purple_700">#3700B3</color>
 </resources>

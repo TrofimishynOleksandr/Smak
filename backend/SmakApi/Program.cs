@@ -23,6 +23,8 @@ using SmakApi.Services.User;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.UseUrls("http://0.0.0.0:5127");
+
 var jwtKey = builder.Configuration["Jwt:Key"];
 
 builder.Services.AddControllers();
@@ -104,7 +106,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:4200")
+        policy.WithOrigins("http://localhost:4200", "http://192.168.0.103:4200")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();

@@ -20,10 +20,17 @@ public class CategoryService : ICategoryService
         _imageService = imageService;
     }
 
-    public async Task<IEnumerable<Models.Entities.Category>> GetAllAsync()
+    public async Task<IEnumerable<CategoryDto>> GetAllAsync()
     {
-        return await _repo.GetAllAsync();
+        var categories = await _repo.GetAllAsync();
+        return categories.Select(c => new CategoryDto
+        {
+            Id = c.Id,
+            Name = c.Name,
+            ImageUrl = c.ImageUrl
+        });
     }
+
 
     public async Task<Guid> CreateWithImageAsync(CreateCategoryDto dto)
     {

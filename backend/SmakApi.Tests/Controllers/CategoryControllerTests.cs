@@ -23,7 +23,7 @@ public class CategoryControllerTests
     public async Task GetAll_ReturnsOkWithCategories()
     {
         // Arrange
-        var categories = new List<SmakApi.Models.Entities.Category>();
+        var categories = new List<CategoryDto>();
         _mockService.Setup(s => s.GetAllAsync()).ReturnsAsync(categories);
 
         // Act

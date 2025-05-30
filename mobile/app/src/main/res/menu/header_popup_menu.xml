@@ -1,0 +1,31 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/menu_items_group">
+        <item
+            android:id="@+id/profile"
+            android:title="Мій обліковий запис" />
+
+        <item
+            android:id="@+id/favorites"
+            android:title="Улюблені рецепти" />
+
+        <item
+            android:id="@+id/my_recipes"
+            android:title="Мої рецепти" />
+
+        <item
+            android:id="@+id/create_recipe"
+            android:title="Створити рецепт" />
+
+        <item
+            android:id="@+id/admin_panel"
+            android:title="Адмін-панель" />
+    </group>
+
+    <group android:id="@+id/logout_group">
+        <item
+            android:id="@+id/logout"
+            android:title="Вийти" />
+    </group>
+</menu>

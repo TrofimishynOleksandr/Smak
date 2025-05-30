@@ -5,7 +5,7 @@ import {UserAdminDto} from '../interfaces/user.interface';
 
 @Injectable({ providedIn: 'root' })
 export class AdminService {
-  private readonly baseUrl = 'http://localhost:5127/api';
+  private readonly baseUrl = 'http://192.168.0.103:5127/api';
 
   constructor(private http: HttpClient) {}
 
